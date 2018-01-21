@@ -1,0 +1,78 @@
+{
+	"info": {
+		"name": "jsonplaceholder",
+		"_postman_id": "59fe4714-a21a-db8f-7afa-93cc2731732e",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d88664b1-e25e-4e06-a241-2ccc9971ee81",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"status code is 200\"] = responseCode.code === 200;",
+							"tests[\"body matches string\"] = responseBody.has(\"reprehenderit\");"
+						]
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/posts?userId=1",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"posts"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "1",
+							"equals": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "del posts",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/posts/1",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"posts",
+						"1"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
